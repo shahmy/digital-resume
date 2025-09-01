@@ -115,7 +115,7 @@
                     <div class="mb-6">
                         <div class="flex justify-between items-baseline mb-1">
                             <h3 class="text-lg sm:text-xl font-bold text-gray-800">{{ $w->position }} at {{ $w->name }}</h3>
-                            <span class="text-sm text-gray-500">{{ \Carbon\Carbon::parse($w->startDate)->format('M Y') }} - {{ !empty($w->endDate) ? \Carbon\Carbon::parse($w->endDate)->format('M Y') : 'Present' }}</span>
+                            <span class="text-sm text-gray-500">{{ \Carbon\Carbon::parse($w->startDate)->format('Y') }} - {{ !empty($w->endDate) ? \Carbon\Carbon::parse($w->endDate)->format('Y') : 'Present' }}</span>
                         </div>
                         <p class="text-gray-600 italic text-sm mb-2">{{ $w->summary }}</p>
                         @if (!empty($w->highlights))
@@ -138,7 +138,7 @@
                     <div class="mb-6">
                         <div class="flex justify-between items-baseline mb-1">
                             <h3 class="text-lg sm:text-xl font-bold text-gray-800">{{ $edu->institution }}</h3>
-                            <span class="text-sm text-gray-500">{{ \Carbon\Carbon::parse($edu->startDate)->format('M Y') }} - {{ !empty($edu->endDate) ? \Carbon\Carbon::parse($edu->endDate)->format('M Y') : 'Present' }}</span>
+                            <span class="text-sm text-gray-500">{{ \Carbon\Carbon::parse($edu->startDate)->format('Y') }} - {{ !empty($edu->endDate) ? \Carbon\Carbon::parse($edu->endDate)->format('Y') : 'Present' }}</span>
                         </div>
                         <p class="text-gray-700 font-medium">{{ $edu->studyType }}, {{ $edu->area }}</p>
                         @if (!empty($edu->score))
@@ -160,7 +160,7 @@
                     <div class="mb-6">
                         <div class="flex justify-between items-baseline mb-1">
                             <h3 class="text-lg sm:text-xl font-bold text-gray-800">{{ $p->name }}</h3>
-                            <span class="text-sm text-gray-500">{{ \Carbon\Carbon::parse($p->startDate)->format('M Y') }} - {{ !empty($p->endDate) ? \Carbon\Carbon::parse($p->endDate)->format('M Y') : 'Present' }}</span>
+                            <span class="text-sm text-gray-500">{{ !empty($p->startDate) ? \Carbon\Carbon::parse($p->startDate)->format('Y') : '' }} - {{ !empty($p->endDate) ? \Carbon\Carbon::parse($p->endDate)->format('Y') : '' }}</span>
                         </div>
                         @if (!empty($p->url))
                         <a href="{{ $p->url }}" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-600 hover:underline mb-2 block">{{ $p->url }}</a>
@@ -242,7 +242,7 @@
                     <div class="mb-6">
                         <div class="flex justify-between items-baseline mb-1">
                             <h3 class="text-lg sm:text-xl font-bold text-gray-800">{{ $v->position }} at {{ $v->organization }}</h3>
-                            <span class="text-sm text-gray-500">{{ \Carbon\Carbon::parse($v->startDate)->format('M Y') }} - {{ !empty($v->endDate) ? \Carbon\Carbon::parse($v->endDate)->format('M Y') : 'Present' }}</span>
+                            <span class="text-sm text-gray-500">{{ !empty($v->startDate)? \Carbon\Carbon::parse($v->startDate)->format('M Y') : '' }} - {{ !empty($v->endDate) ? \Carbon\Carbon::parse($v->endDate)->format('M Y') : '' }}</span>
                         </div>
                         <p class="text-gray-600 italic text-sm mb-2">{{ $v->summary }}</p>
                         @if (!empty($v->highlights))
